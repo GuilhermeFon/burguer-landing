@@ -173,7 +173,7 @@ function LandingPage() {
               </li>
               <li>
                 <a href="#" className="hover:text-white">
-                  Política de Privacidade
+                  Política de Privaci de
                 </a>
               </li>
             </ul>
