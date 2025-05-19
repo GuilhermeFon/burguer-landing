@@ -1,103 +1,242 @@
-import Image from "next/image";
+// import { Toaster } from "sonner";
+// 'use client';
+// import {useState} from "react";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+    <div className="min-h-screen flex flex-col">
+      <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm p-4 flex justify-between items-center border-b">
+        <h2 className="text-xl font-semibold text-orange-600">BurgerPro</h2>
+      </header>
+      <main className="flex-1">
+        <LandingPage />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      {/* <Toaster /> */}
+    </div>
+  );
+}
+
+function LandingPage() {
+  // const [email, setEmail] = useState("");
+  // const [name, setName] = useState("");
+
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  // Handle form submission
+  // setEmail("");
+  // setName("");
+  // };
+
+  return (
+    <div className="w-full">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-20 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            Transforme Sua Cozinha em uma Hamburgueria Lucrativa
+          </h1>
+          <p className="text-xl md:text-2xl mb-8">
+            Aprenda a criar hambúrgueres artesanais e construa um negócio de
+            sucesso sem sair de casa
+          </p>
+          <button className="bg-white text-orange-600 px-8 py-4 rounded-full text-xl font-bold hover:bg-orange-100 transition-colors cursor-pointer">
+            Comece Agora
+          </button>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Por que Escolher Nosso Curso?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="text-center p-6 rounded-lg bg-orange-50"
+              >
+                <div className="text-4xl mb-4">{benefit.icon}</div>
+                <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
+                <p className="text-gray-600">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            O Que Dizem Nossos Alunos
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+                <p className="text-gray-600 mb-4">
+                  &quot;{testimonial.text}&quot;
+                </p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
+                  <div>
+                    <h4 className="font-bold">{testimonial.name}</h4>
+                    <p className="text-gray-500">{testimonial.location}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Course Details Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            O Que Você Vai Aprender
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {courseModules.map((module, index) => (
+              <div key={index} className="flex items-start">
+                <div className="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                  {index + 1}
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">{module.title}</h3>
+                  <p className="text-gray-600">{module.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Lead Capture Form */}
+      <section className="py-16 px-4 bg-orange-50">
+        <div className="max-w-xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            Comece Sua Jornada Hoje
+          </h2>
+          <form
+            // onSubmit={handleSubmit}
+            className="space-y-4"
+          >
+            <input
+              type="text"
+              // value={name}
+              // onChange={(e) => setName(e.target.value)}
+              placeholder="Seu nome"
+              className="w-full p-3 rounded-lg border border-gray-300"
+              required
+            />
+            <input
+              type="email"
+              // value={email}
+              // onChange={(e) => setEmail(e.target.value)}
+              placeholder="Seu melhor e-mail"
+              className="w-full p-3 rounded-lg border border-gray-300"
+              required
+            />
+            <button
+              type="submit"
+              className="w-full bg-orange-600 text-white py-3 rounded-lg font-bold hover:bg-orange-700 transition-colors cursor-pointer"
+            >
+              Quero Me Inscrever
+            </button>
+          </form>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-bold mb-4">BurgerPro</h3>
+            <p className="text-gray-400">
+              Transformando sonhos em negócios de sucesso
+            </p>
+          </div>
+          <div>
+            <h4 className="font-bold mb-4">Links Úteis</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li>
+                <a href="#" className="hover:text-white">
+                  Sobre o Curso
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white">
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white">
+                  Política de Privacidade
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold mb-4">Contato</h4>
+            <ul className="space-y-2 text-gray-400">
+              <li>contato@burgerpro.com</li>
+              <li>(11) 99999-9999</li>
+            </ul>
+          </div>
+        </div>
       </footer>
     </div>
   );
 }
+
+const benefits = [
+  {
+    icon: "🎯",
+    title: "Método Comprovado",
+    description: "Sistema testado e aprovado por mais de 1000 alunos",
+  },
+  {
+    icon: "💰",
+    title: "Retorno Garantido",
+    description: "Recupere seu investimento em menos de 30 dias",
+  },
+  {
+    icon: "🚀",
+    title: "Suporte Completo",
+    description: "Acompanhamento personalizado durante todo o curso",
+  },
+];
+
+const testimonials = [
+  {
+    text: "Em apenas 2 meses, consegui criar uma renda extra de R$ 3.000 com minha hamburgueria caseira!",
+    name: "Ana Silva",
+    location: "São Paulo, SP",
+  },
+  {
+    text: "O curso me deu todas as ferramentas necessárias para começar meu negócio do zero.",
+    name: "Carlos Santos",
+    location: "Rio de Janeiro, RJ",
+  },
+];
+
+const courseModules = [
+  {
+    title: "Fundamentos do Hambúrguer Artesanal",
+    description: "Aprenda as técnicas essenciais para criar blends perfeitos",
+  },
+  {
+    title: "Gestão Financeira",
+    description: "Calcule custos, preços e maximize seus lucros",
+  },
+  {
+    title: "Marketing Digital",
+    description: "Atraia clientes usando as redes sociais",
+  },
+  {
+    title: "Operação e Logística",
+    description: "Organize sua produção e entregas de forma eficiente",
+  },
+];
